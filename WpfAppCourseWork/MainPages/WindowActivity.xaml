@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfAppCourseWork.WindowActivity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppCourseWork"
+        mc:Ignorable="d"
+        Title="COAT" Height="600" Width="900" WindowStartupLocation="CenterScreen" Icon="../Resourses/logo.png">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF3736C"   />
+                <GradientStop Color="#F7E0DC" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="350*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="../Resourses/logo.png" Grid.Column="0" Width="150" HorizontalAlignment="Center" Margin="10"/>
+        <StackPanel  Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="COAT" Foreground="White" FontSize="60" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center"/>
+            <TextBlock Text="- сеть мебельных магазинов -" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light SemiCondensed" />
+        </StackPanel>
+
+        <Grid Grid.Column="3">
+            <TextBlock x:Name="UserText" Text="Здравствуйте, " 
+                       Style="{StaticResource TextBlock1}" VerticalAlignment="Top" Margin="0,15"  FontSize="20" Foreground="White"/>
+            <TextBlock x:Name="UserName" Text="{Binding Login}" Style="{StaticResource TextBlock1}"
+                      Margin="0"  Foreground="White"/>
+            <Button x:Name="Qiut_Btn" Click="Qiut_Btn_Click" Content="Выйти" Background="White" Foreground="#FFB23836"
+                    Style="{StaticResource Button}" Width="70" VerticalAlignment="Bottom" Margin="10" HorizontalAlignment="Right"/>
+        </Grid>
+
+        <Frame x:Name="FrmMain" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" FontSize="18" NavigationUIVisibility="Hidden"/>
+
+    </Grid>
+</Window>

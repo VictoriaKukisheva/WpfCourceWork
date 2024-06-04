@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfAppCourseWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppCourseWork"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="600" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Resourses/logo.png">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF3736C"   />
+                <GradientStop Color="#F7E0DC" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="0.8*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Grid.Row="0" Text="COAT" VerticalAlignment="Top" TextAlignment="Center" Width="200" Height="60" Foreground="White" FontSize="60" FontFamily="Bahnschrift SemiBold"/>
+                    <TextBlock Grid.Row="0" Text="- сеть мебельных магазинов -" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light SemiCondensed" />
+
+                    <Image Grid.Row="0" Source="Resourses/images_plate.png" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+            
+
+            <Grid Grid.Column="1"  Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Введите логин: " Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Style="{StaticResource TextBlock1}"/>
+                <TextBox x:Name="txtLogin" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,40" Style="{StaticResource TextBox}"/>
+                <TextBlock Text="Введите пароль: " Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,60" Style="{StaticResource TextBlock1}"/>
+                <PasswordBox x:Name="txtPassword" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,20" Style="{StaticResource PasswordBox}"/>
+
+                <Button x:Name="Enter" Click="Enter_Click" Grid.Column="1" Grid.Row="2" Style="{StaticResource Button}" VerticalAlignment="Top" Content="Войти" Background="#FF981D20"/>
+                <Button x:Name="Regist" Click="Regist_Click" Grid.Column="1" Grid.Row="2"  Content="Регистрация" VerticalAlignment="Center" Style="{StaticResource Button}"  Background="#FFF3746D"/>
+                <Button x:Name="Quest" Click="Guest_Click" Grid.Column="1" Grid.Row="2"  Content="Войти как гость" VerticalAlignment="Bottom" Style="{StaticResource Button}"  Background="#FFF4918B"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

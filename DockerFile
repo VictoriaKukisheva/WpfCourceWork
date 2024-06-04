@@ -1,0 +1,18 @@
+# Используем базовый образ .NET SDK для сборки
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /app
+
+# Копируем файлы проекта и восстанавливаем зависимости
+COPY . ./
+RUN dotnet restore
+
+# Сборка проекта
+RUN dotnet publish -c Release -o out
+
+# Используем базовый образ .NET Runtime для запуска
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build /app/out .
+
+# Команда для запуска вашего приложения
+ENTRYPOINT ["dotnet", "YourProjectName.dll"]
